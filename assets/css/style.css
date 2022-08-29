@@ -1,12 +1,19 @@
 /* ヘッダー部分 */
 header {
     max-width: 960px;
-    height: 100px;
+    height: 200px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     padding: 0 4%;
+}
+
+.header-left img {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .header-right ul {
@@ -14,8 +21,12 @@ header {
     align-items: center;
 }
 
-.header-right li {
-    padding-left: 15px;
+.header-right a {
+    margin-left: 50px;
+}
+
+.header-right a:nth-child(1) {
+    margin-left: 0;
 }
 
 .fa-brands {
@@ -31,26 +42,28 @@ header {
 }
 
 .main-title {
-    font-size: 30px;
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 80px;
 }
 
+/* メイン部分 */
 .main-container {
     max-width: 100%;
 }
 
 #contents {
     background-color: #f9f9f9;
-    padding: 20px;
-    margin: 0 auto 100px auto;
+    padding: 40px;
+    margin-bottom: 100px;
+    border-radius: 5px;
 }
 
 .contents-title {
     font-size: 20px;
     font-weight: bold;
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 #contents li {
@@ -59,8 +72,9 @@ header {
 }
 
 .article-title {
-    font-size: 25px;
-    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
 .article-subtitle {
@@ -68,12 +82,13 @@ header {
     margin-bottom: 25px;
 }
 
+/* スライド部分 */
 .shop-slide {
     position: relative;
-    width: 100%;
-    height: 400px;
+    /* width: 100%;
+    height: 400px; */
     object-fit: cover;
-    padding-bottom: 59.97%;
+    padding-bottom: 66.66%;
 }
 
 .shop-slide img {
@@ -81,7 +96,7 @@ header {
     width: 100%;
     height: auto;
     opacity: 0;
-    animation: slideshow 15s linear infinite;
+    animation: slideshow 20s linear infinite;
 }
 
 .shop-slide img:nth-child(1) {
@@ -96,21 +111,24 @@ header {
     animation-delay: 10s;
 }
 
+.shop-slide img:nth-child(4) {
+    animation-delay: 15s;
+}
 
 @keyframes slideshow {
     0% {
         opacity: 0;
     }
 
-    18% {
+    20% {
         opacity: 1;
     }
 
-    28% {
+    30% {
         opacity: 1;
     }
 
-    38% {
+    35% {
         opacity: 0;
     }
 
@@ -119,25 +137,36 @@ header {
     }
 }
 
-
 .shop-description {
-    padding: 20px;
+    padding: 30px;
+    font-size: 16px;
 }
 
 .shop-info {
     font-size: 18px;
-    display: flex;
-    flex-direction: column;
+}
+
+.shop-detail a {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .shop-info li {
+    font-size: 14px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.shop-info i {
+    font-size: 20px;
+    color: orange;
 }
 
 .shop-info p {
-    margin-left: 14px;
+    margin-left: 10px;
 }
 
 .shop-title {
@@ -158,11 +187,12 @@ header {
 
 .shop-title::after {
     content: 'info';
-    font-size: 22px;
+    font-size: 26px;
+    font-family: 'Abril Fatface', cursive;
     color: #63666a;
     position: absolute;
     right: 0;
-    bottom: -14px;
+    bottom: -8px;
     border: none;
 }
 
@@ -188,12 +218,14 @@ header {
 .food-2,
 .food-3 {
     width: 50%;
-    width: 50%;
+    height: auto;
+    object-fit: scale-down;
 }
 
 .content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 #main-wrap {
@@ -219,6 +251,7 @@ main {
 #profile img {
     width: 200px;
     height: 200px;
+    object-fit: cover;
     border-radius: 50%;
     margin-bottom: 30px;
 }
@@ -237,7 +270,7 @@ main {
 #archive li {
     font-size: 14px;
     text-align: left;
-    padding: 20px;
+    padding: 20px 10px;
     border-bottom: solid 1px darkgray;
 }
 
@@ -252,12 +285,153 @@ main {
 
 .article-container {
     padding: 0 2%;
-    margin: 0 auto 130px auto;
+    margin: 0 auto 100px auto;
 }
+
 
 footer {
     max-width: 100%;
     text-align: center;
     background-color: #f9f9f9;
     padding: 15px;
+}
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 767px) {
+    header {
+        width: 100%;
+        height: 160px;
+    }
+
+    .header-left img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .header-right a {
+        margin-left: 18px;
+    }
+
+    .header-right ul {
+        font-size: 14px;
+    }
+
+    .fa-brands {
+        font-size: 20px;
+    }
+
+    .kv img {
+        margin-bottom: 30px;
+    }
+
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    #contents {
+        margin-bottom: 30px;
+    }
+
+    .contents-title {
+        padding-bottom: 10px;
+    }
+
+    .article-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .article-subtitle {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .shop-slide img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .shop-description {
+        padding: 20px;
+        font-size: 12px;
+    }
+
+    .food-img {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .food-1,
+    .food-2,
+    .food-3 {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .shop-detail {
+        width: 100%;
+    }
+
+    .shop-detail a {
+        font-size: 17px;
+    }
+
+    .shop-info li {
+        font-size: 13px;
+
+    }
+
+    .shop-info i {
+        font-size: 18px;
+
+    }
+
+    #profile img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 18px;
+    }
+
+    .sidebar-title {
+        margin-bottom: 18px;
+    }
+
+    #profile p {
+        font-size: 12px;
+    }
+
+    #archive li {
+        font-size: 12px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #main-wrap {
+        display: block;
+    }
+
+    .article-container {
+        margin-bottom: 60px;
+    }
+
+    .sidebar-container {
+        margin-bottom: 60px;
+    }
+
+    #sidebar-wrap {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 10px;
+    }
 }
